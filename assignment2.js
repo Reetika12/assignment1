@@ -69,7 +69,6 @@ function checkPalindrome(num) {
   let finalnum = num;
   let res = 0;
   let rem = 0;
-  console.log("finalnum", finalnum);
   while (finalnum > 0) {
     rem = finalnum % 10;
     res = res * 10 + rem;
