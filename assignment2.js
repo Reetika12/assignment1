@@ -44,7 +44,7 @@ function checkPrime(num) {
   if (num == 2) {
     return true;
   }
-  for (let i = 2; i < Math.sqrt(num) + 1; i++) {
+  for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i == 0) {
       return false;
     }
@@ -90,3 +90,58 @@ function findPalindromeNumbers(arr) {
 }
 
 console.log("palindrome numbers", findPalindromeNumbers([121, 4576, 737]));
+
+// f) Return median of two sorted arrays of same size using recursion time complexity o(logn)
+
+function getMedian(arr1, arr2, start1, start2, end1, end2) {
+  if (end1 - start1 === 1) {
+    // console.log("start1", start1, "start2", start2);
+    // console.log("end1", end1, "end2", end2);
+    // console.log("max among two", Math.max(arr1[start1], arr2[start2]));
+    // console.log("min among two", Math.min(arr1[end1], arr2[end2]));
+    let num =
+      (Math.max(arr1[start1], arr2[start2]) +
+        Math.min(arr1[end1], arr2[end2])) /
+      2;
+    return num;
+  }
+  let m1 = median(arr1, start1, end1);
+  let m2 = median(arr2, start2, end2);
+  if (m1 === m2) {
+    return m1;
+  }
+  if (m1 < m2) {
+    return getMedian(
+      arr1,
+      arr2,
+      Math.floor((end1 + start1) / 2),
+      start2,
+      end1,
+      Math.floor((end2 + start2) / 2)
+    );
+  } else {
+    return getMedian(
+      arr1,
+      arr2,
+      start1,
+      Math.floor((end2 + start2) / 2),
+      Math.floor((end1 + start1) / 2),
+      end2
+    );
+  }
+}
+
+function median(arr, start, end) {
+  let length = end - start + 1;
+  let n = (start + end) / 2;
+  if (length % 2 == 0) {
+    return Math.floor((arr[n] + arr[n + 1]) / 2);
+  } else {
+    return arr[n];
+  }
+}
+
+console.log(
+  "median",
+  getMedian([1, 12, 15, 26, 38], [2, 13, 17, 30, 45], 0, 0, 4, 4)
+);
