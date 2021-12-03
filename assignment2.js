@@ -145,3 +145,23 @@ console.log(
   "median",
   getMedian([1, 12, 15, 26, 38], [2, 13, 17, 30, 45], 0, 0, 4, 4)
 );
+
+// g)Remove duplicates from an array
+function removeDuplicate(arr) {
+  let res = [];
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (obj[arr[i]]) {
+      obj[arr[i]] = obj[arr[i]] + 1;
+    } else {
+      obj[arr[i]] = 1;
+    }
+  }
+  Object.keys(obj).map((key) => res.push(key));
+  return res;
+}
+
+console.log(
+  "removed duplicate numbers are",
+  removeDuplicate([4, 4, 7, 8, 9, 3, 3])
+);
