@@ -165,3 +165,18 @@ console.log(
   "removed duplicate numbers are",
   removeDuplicate([4, 4, 7, 8, 9, 3, 3])
 );
+// h) Rotate an array by k times
+function rotateArrayByKTimes(arr, n) {
+  const len = arr.length;
+  n = n % len;
+  let res = [];
+  for (let i = 0; i < len; i++) {
+    if (i < n) {
+      res.push(arr[len + i - n]);
+    } else {
+      res.push(arr[i - n]);
+    }
+  }
+  return res;
+}
+console.log("rotate array by k times", rotateArrayByKTimes([1, 2, 3, 4, 5], 4));
