@@ -6,6 +6,7 @@ request.open("GET", "https://jsonplaceholder.typicode.com/posts");
 
 // 3. Send a request
 request.send();
+
 // 4. Data after response
 request.onload = function () {
   var data = JSON.parse(this.response);
