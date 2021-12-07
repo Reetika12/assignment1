@@ -33,3 +33,92 @@ for (var i = 0; i < numsArr.length; i++) {
   }
 }
 console.log("new_string", new_string);
+
+//
+
+var new_string = "";
+
+for (var j = 0; j < numsArr.length; j++) {
+  if (j % 2 === 0) {
+    new_string = new_string + "even";
+    if (j !== numsArr.length - 1) {
+      new_string += " , ";
+    }
+  } else if (j === numsArr.length - 1) {
+    new_string += numsArr[j];
+  } else {
+    new_string += numsArr[j] + ", ";
+  }
+}
+console.log("new_string", new_string);
+error in sum it need to be outside loop
+
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum = 0;
+for (var i = 0; i <= 10; i++) {
+  sum += numsArr[i];
+}
+console.log("sum", sum);
+
+// Write a code to add the even numbers only
+
+var numsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var totalsum = 0;
+for (var i = 0; i < numsArr.length; i++) {
+  if (numsArr[i] % 2 === 0) {
+    totalsum += numsArr[i];
+  }
+}
+console.log("even number sum", totalsum);
+
+// Write a code to add the even numbers and subract the odd numbers
+
+var numsArr = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+var sum=100;
+for (var i = 0; i < numsArr.length; i++) {
+  if(numsArr[i]%2===0)
+  {
+      sum+=numsArr[i];
+  }
+  else{
+      sum-=numsArr[i];
+  }
+}
+console.log("sum of even and subtract of odd", sum);
+
+// Write a code to print inner arrays
+// remove the semicolon from loop
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+for (var i = 0; i < numsArr.length; i++) {
+ console.log(numsArr[i])
+}
+
+//Write a code to print elements in the inner arrays
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+let result=""
+for (var i = 0; i < numsArr.length; i++) {
+    for(let j=0;j<numsArr[i].length;j++)
+    {
+        result+=numsArr[i][j]
+      
+    }
+
+}
+console.log("inner elements of array",result)
+
+//Write a code to replace the array value — If the index is even, replace it with ‘even’.
+
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+// var str_all=0;
+for (var i = 0; i < numsArr.length; i++) {
+//  var inner_array = numsArr[i];
+    for(var j = 0 ; j < numsArr[i].length;j++ )
+    {
+        if(numsArr[i][j] %2 === 0 )
+        {
+            numsArr[i][j] = "even"
+        }
+    }
+}
+console.log("numsArr",numsArr);
+
