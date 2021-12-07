@@ -122,3 +122,35 @@ for (var i = 0; i < numsArr.length; i++) {
 }
 console.log("numsArr",numsArr);
 
+// Write a code to print elements in the inner arrays in reverse
+
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var str_all="";
+for (var i = numsArr.length-1; i >=0; i--) {
+    for(var j = numsArr[i].length-1; j >= 0 ; j-- )
+    {
+        str_all +=numsArr[i][j]+" ";
+    }
+}
+console.log("str_all",str_all);
+
+//Write a code to add elements in the inner arrays based on odd or even values
+
+var numsArr = [[1, 2, 3, 4, 5],[ 6, 7, 8, 9, 10, 11]];
+var sum_odd=0;
+var sum_even=0;
+for (var i = 0; i < numsArr.length; i++) {
+
+    for(var j = 0 ; j < numsArr[i].length; j++){
+        if(numsArr[i][j] % 2 !==0)
+        {
+        sum_odd += numsArr[i][j];
+        }
+        else
+        {
+        sum_even += numsArr[i][j];
+        }
+    }
+}
+console.log("sum_odd",sum_odd);
+console.log("sum_even",sum_even);
