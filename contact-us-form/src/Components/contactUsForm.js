@@ -15,6 +15,9 @@ function ContactUsForm() {
         </WrapLeftfield>
       </WrapBothField>
       <SubmitButton>Submit</SubmitButton>
+      <a href="https://www.google.com/" target="_blank">
+        google.com
+      </a>
     </ParentComp>
   );
 }
