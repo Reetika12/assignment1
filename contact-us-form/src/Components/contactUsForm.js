@@ -1,6 +1,17 @@
+import React, { useState } from "react";
 import styled from "styled-components";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormLabel from "@mui/material/FormLabel";
 
 function ContactUsForm() {
+  const [value, setValue] = useState("");
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+    // console.log("changed value", e.target.value);
+  };
   return (
     <ParentComp>
       <Label>Entitled Contact Form</Label>
@@ -18,6 +29,24 @@ function ContactUsForm() {
       <a href="https://www.google.com/" target="_blank">
         google.com
       </a>
+      <FormLabel component="legend">Employee Type</FormLabel>
+      <RadioGroup
+        aria-label="employee"
+        name="controlled-radio-buttons-group"
+        value={value}
+        onChange={handleChange}
+      >
+        <FormControlLabel
+          value="Salaried"
+          control={<Radio />}
+          label="Salaried"
+        />
+        <FormControlLabel
+          value="own business"
+          control={<Radio />}
+          label="own business"
+        />
+      </RadioGroup>
     </ParentComp>
   );
 }
@@ -35,7 +64,7 @@ const ParentComp = styled.div`
   align-items: center;
   justify-content: center;
   background: #dcdcdc;
-  height: 70vh;
+  height: 80vh;
   margin: 5% 18% 5% 18%;
 `;
 const WrapRightfield = styled.div`
