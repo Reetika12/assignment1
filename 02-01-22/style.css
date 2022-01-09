@@ -1,0 +1,53 @@
+section {
+  border: solid 2px red;
+  margin: 10px;
+  padding: 15px;
+  width: 500px;
+}
+h1 {
+  border: solid 2px green;
+  margin: 10px;
+  padding: 15px;
+}
+button {
+  border: solid 2px red;
+  /* padding: 10px 15px 10px 15px; */
+  padding: 10px 15px;
+  margin: 10px;
+}
+#absolute {
+  position: absolute;
+  /* top: 20px; */
+  right: 30px;
+  border: 2px solid green;
+  width: 200px;
+  height: 500px;
+}
+#relative {
+  position: relative;
+  top: 20px;
+  border: 2px solid red;
+  width: 100px;
+  height: 200px;
+  /* background-image: linear-gradient(90deg, red, pink); */
+  background-image: radial-gradient(red, green);
+}
+
+#fixed {
+  border: inherit;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 30px;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid red;
+  margin: 10px;
+}
