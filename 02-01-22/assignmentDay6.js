@@ -79,3 +79,42 @@ console.log(
   "determine of the 2nd array is a rotated version of the 1st array",
   checkIfArrayIsRotated([1, 2, 3, 5, 6, 7, 8], [5, 6, 7, 8, 1, 2, 3])
 );
+
+let arr = ["orange", "apple", "banana", "grape", "pineapple"];
+let searchVal = "Ap";
+
+let res2 = arr.filter((el) =>
+  el.toLowerCase().includes(searchVal.toLowerCase())
+);
+console.log("filtered value", res2);
+
+let res = arr.filter((el) => el.length < 5 || el.length === 5);
+console.log("result", res);
+
+let obj = { name: "jagan", age: "25", company: "guvi" };
+
+// Object.keys(obj).map((el) => {
+//   console.log(el);
+// });
+// Object.entries(obj).map(([key, value]) => {
+//   console.log(`${key} ${value}`);
+// });
+
+// Object.keys(obj).map((el) => {
+//   console.log(el, obj[el]);
+// });
+
+let fnc = () => {
+  fetch("https://621a132e81d4074e85b8cb7e.mockapi.io/api/users")
+    .then((res) => res.json())
+    .then((data) => {
+      data.map((el) => {
+        el.age > 18
+          ? console.log(el.name, "eligible")
+          : console.log(el.name, "not eligible");
+      });
+    })
+    .catch((error) => console.log(error));
+  console.log("list", listdata);
+};
+fnc();

@@ -1,16 +1,34 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-       <title>Document guvi</title>
-     </head>
- <body>
-    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        <div>
-             Guvi Geek Network
-         </div>
+  <head>
+    <title>Document guvi</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      const input = document.createElement("input");
+
+      input.setAttribute("type", "text");
+      input.setAttribute("name", "username");
+      input.setAttribute("placeholder", "Username");
+      input.innerText = "user name";
+      document.body.appendChild(input);
+      let divtag = document.createElement("div");
+      let ptag = "helllllllll000000";
+      ptag.innerHTML = "reetika is so beautiful!!";
+      divtag.append(ptag);
+      document.body.append(divtag);
+    </script>
+    <!-- <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <div>Guvi Geek Network</div>
     </div>
-    <p><a href="https://www.w3schools.com/" target="_blank">Visit W3Schools.com!</a></p>
+    <p>
+      <a href="https://www.w3schools.com/" target="_blank"
+        >Visit W3Schools.com!</a
+      >
+    </p> -->
     <!-- <script src="ContactUsForm.js"></script> -->
-</body>
+    <!-- <script src="test.js"></script> -->
+  </body>
 </html>
