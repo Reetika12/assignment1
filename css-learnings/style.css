@@ -1,0 +1,48 @@
+h1:hover {
+  color: brown;
+}
+.heading {
+  color: chartreuse;
+}
+#header {
+  color: pink;
+}
+
+/* li:first-child {
+  color: steelblue;
+}
+li:last-child {
+  color: violet;
+}
+li:nth-child(2) {
+  color: teal;
+} */
+/* #google-link:link {
+  color: green;
+}
+#google-link:visited {
+  color: red;
+} */
+h2 + a {
+  color: red;
+}
+ul > li {
+  color: blue;
+}
+ul li {
+  color: green;
+}
+
+h2[class="subtitle"] {
+  color: greenyellow;
+}
+/* img[src^="./image"] {
+  border: 2px solid black;
+  width: 30%;
+  height: 30%;
+} */
+img[src*="./image"] {
+  border: 2px solid black;
+  width: 30%;
+  height: 30%;
+}
