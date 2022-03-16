@@ -41,11 +41,29 @@ function DragAndDrop() {
     }
     return "dnd-item";
   };
-
+  const handleDragEnter = (e, params) => {
+    console.log("drag enter...", params);
+    const currentItem = dragItem.current;
+    console.log("current item", currentItem);
+    if (e.target !== dragNode.current) {
+      setList((oldlist) => {
+        let newlist = JSON.parse(JSON.stringify(oldlist));
+        console.log("newlist", newlist);
+        newlist[params.index].items.splice(
+          params.itemIndex,
+          0,
+          newlist[currentItem.index].items.splice(currentItem.itemIndex, 1)[0]
+        );
+        dragItem.current = params;
+        return newlist;
+      });
+      console.log("target is not the same");
+    }
+  };
   return (
     <div>
       <div className="drag-n-drop">
-        {data.map((grp, index) => {
+        {list.map((grp, index) => {
           return (
             <div className="dnd-group" key={grp.title}>
               <div className="group-title">{grp.title}</div>
@@ -56,6 +74,13 @@ function DragAndDrop() {
                     onDragStart={(e) => {
                       handleDragStart(e, { index, itemIndex });
                     }}
+                    onDragEnter={
+                      dragging
+                        ? (e) => {
+                            handleDragEnter(e, { index, itemIndex });
+                          }
+                        : null
+                    }
                     className={
                       dragging ? getStyles({ index, itemIndex }) : "dnd-item"
                     }
