@@ -41,11 +41,18 @@ function DragAndDrop() {
     }
     return "dnd-item";
   };
-  const handleDragEnter = (e, params) => {
-    console.log("drag enter...", params);
+  const handleDragEnter = (e, params, noitem) => {
+    // console.log("drag enter...", params);
     const currentItem = dragItem.current;
-    console.log("current item", currentItem);
-    if (e.target !== dragNode.current) {
+    // console.log("current item", currentItem);
+    console.log(
+      "drag item when no item in group",
+      e.target,
+      "dragNode.current",
+      dragNode.current
+    );
+    if (e.target !== dragNode.current || noitem) {
+      // console.log("drag item when no item in group+++++", e.target);
       setList((oldlist) => {
         let newlist = JSON.parse(JSON.stringify(oldlist));
         console.log("newlist", newlist);
@@ -57,7 +64,7 @@ function DragAndDrop() {
         dragItem.current = params;
         return newlist;
       });
-      console.log("target is not the same");
+      // console.log("target is not the same");
     }
   };
   return (
@@ -65,7 +72,21 @@ function DragAndDrop() {
       <div className="drag-n-drop">
         {list.map((grp, index) => {
           return (
-            <div className="dnd-group" key={grp.title}>
+            <div
+              className="dnd-group"
+              // draggable
+              key={grp.title}
+              onDragEnter={
+                !grp.items.length
+                  ? (e) =>
+                      handleDragEnter(
+                        e,
+                        { index, itemIndex: 0 },
+                        "noItemInGroup"
+                      )
+                  : null
+              }
+            >
               <div className="group-title">{grp.title}</div>
               {grp.items.map((item, itemIndex) => {
                 return (
